@@ -46,4 +46,18 @@ export const getServerSideProps = withAuth(async (ctx) => {
   return { props: { user: session.user } };
 });
 ```
+##
 
+## 📨 Contato
+📫 Email: (mailto:esbnet@gmail.com)
+🌐 Site [Edmilson Soares](https://esbnet-port.vercel.app/)
+
+
+
+<center>
+
+## 🙏 Agradecimentos
+Sinte-se a vontade para fazer uma doação via [BuyMeACoffee](https://www.buymeacoffee.com/esbdev)
+![Capa](/src/assets/bmc_qr.png)
+
+</center>
