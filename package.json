@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@auth/firebase-adapter": "^2.8.0",
+    "@stripe/stripe-js": "^7.1.0",
     "firebase-admin": "^12.6.0",
     "next": "15.3.0",
     "next-auth": "^5.0.0-beta.25",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "stripe": "^18.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

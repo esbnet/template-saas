@@ -1,23 +1,21 @@
-"use client";
+'use client';
 
-import { handleAuth } from "@/app/actions/handle-auth";
-import { FcGoogle } from "react-icons/fc";
+import { handleAuth } from '@/app/actions/handle-auth';
+import { FcGoogle } from 'react-icons/fc';
 
 export default function Login() {
 	return (
-		<div className="flex flex-col justify-center items-center gap-6 h-screen">
-			<h1 className="font-[font-family:var(--font-geist-sans)] text-5xl">
-				Login
+		<div className="flex flex-col justify-center items-center gap-6 p-4 h-full">
+			<h1 className="font-[font-family:var(--font-geist-sans)] text-3xl">
+				Acesse com sua conta google
 			</h1>
 
-			<form action={handleAuth} >
+			<form action={handleAuth}>
 				<button
 					type="submit"
-					className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-8 py-2 rounded-4xl font-bold text-white cursor-pointer"
+					className="bg-yellow-400 hover:bg-yellow-500 shadow-md px-18 py-3 rounded-full font-semibold text-gray-900 transition duration-300 ease-in-out"
 				>
-									<FcGoogle size={24} />
-
-					Entrar
+					<FcGoogle size={24} />
 				</button>
 			</form>
 		</div>
