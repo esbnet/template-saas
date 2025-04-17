@@ -16,8 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'Make Money',
-	description: 'Compartilhe sua vida com quem você ama',
+	title: {
+		default: 'Make Money',
+		template: '%s | MM',
+	},
+	description: 'A simply saas template.',
 };
 
 export default function RootLayout({

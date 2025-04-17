@@ -1,9 +1,15 @@
-'use client';
-
 import { handleAuth } from '@/app/actions/handle-auth';
+import { auth } from '@/app/lib/auth';
+import { redirect } from 'next/navigation';
 import { FcGoogle } from 'react-icons/fc';
 
-export default function Login() {
+export default async function Login() {
+	const session = await auth();
+
+	if (session) {
+		return redirect('/dashboard');
+	}
+
 	return (
 		<div className="flex flex-col justify-center items-center gap-6 p-4 h-full">
 			<h1 className="font-[font-family:var(--font-geist-sans)] text-3xl">

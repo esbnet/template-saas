@@ -1,7 +1,12 @@
 import { handleAuth } from '@/app/actions/handle-auth';
 import { auth } from '@/app/lib/auth';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+
+export const metadata: Metadata = {
+	title: 'Dashboard',
+};
 
 export default async function Dashboard() {
 	const session = await auth();
@@ -28,8 +33,7 @@ export default async function Dashboard() {
 						href="/payment"
 						className="bg-yellow-400 hover:bg-yellow-500 shadow-md px-6 py-3 rounded-lg font-semibold text-gray-900 transition duration-300 ease-in-out"
 					>
-						{' '}
-						Pagamentos
+						Assinar Serviço
 					</Link>
 				</div>
 

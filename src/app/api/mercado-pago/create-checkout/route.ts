@@ -14,6 +14,7 @@ export async function POST(req: NextRequest) {
 				external_reference: testId,
 				metadata: {
 					testId, // convertida para snake_case
+					userEmail,
 				},
 				...(userEmail && { payer: { email: userEmail } }), // importante para pontuação mp
 				items: [
