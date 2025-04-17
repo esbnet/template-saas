@@ -1,6 +1,7 @@
 'use client';
 
-import { useStripe } from '@/app/hooks/useStripe';
+import { useMercadoPago } from '@/app/hooks/use-mercado-pago';
+import { useStripe } from '@/app/hooks/use-stripe';
 import { useRouter } from 'next/navigation';
 
 export default function Payment() {
@@ -11,6 +12,8 @@ export default function Payment() {
 		createSubscriptionStripeCheckout,
 		hadleCreateStripePortal,
 	} = useStripe();
+
+	const { createMercadoPagoCheckout } = useMercadoPago();
 
 	return (
 		<div className="relative flex flex-col gap-6 p-4">
@@ -48,6 +51,19 @@ export default function Payment() {
 				onClick={() => hadleCreateStripePortal()}
 			>
 				Gerenciar Assinaturas
+			</button>
+
+			<button
+				type="button"
+				className="bg-yellow-400 hover:bg-yellow-500 shadow-md px-6 py-3 rounded-lg font-semibold text-gray-900 transition duration-300 ease-in-out"
+				onClick={() =>
+					createMercadoPagoCheckout({
+						testeId: '123',
+						userEmail: '2Bv0k@example.com',
+					})
+				}
+			>
+				Criar Pagamento Mercado Pago
 			</button>
 
 			<div className="top-4 right-4 absolute">

@@ -4,15 +4,7 @@ const nextConfig: NextConfig = {
 	/* config options here */
 
 	images: {
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'lh3.googleusercontent.co',
-				port: '',
-				pathname: '/**',
-				search: '',
-			},
-		],
+		remotePatterns: [new URL('https://lh3.googleusercontent.com/a/**')],
 	},
 };
 
