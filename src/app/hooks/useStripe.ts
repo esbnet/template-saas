@@ -2,14 +2,14 @@ import { type Stripe, loadStripe } from '@stripe/stripe-js';
 import { useEffect, useState } from 'react';
 
 type PaymentCheckoutData = {
-	testId: string;
-	price: string;
+	testeId: string;
+	price?: string;
 };
 
 type SubscriptionCheckoutData = {
 	testeId: string;
-	price: string;
-	userId: string;
+	price?: string;
+	userId?: string;
 };
 
 export function useStripe() {
