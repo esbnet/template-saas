@@ -13,11 +13,10 @@ export async function GET(req: NextRequest) {
 	}
 
 	const payment = new Payment(mpClient);
-
 	const paymentData = await payment.get({ id: paymentId });
 
-	if (paymentData.date_approved !== null || paymentData.status === 'approved') {
-		return NextResponse.redirect(new URL('/success', req.url));
+	if (paymentData.status === 'approved' || paymentData.date_approved !== null) {
+		return NextResponse.redirect(new URL('success', req.url));
 	}
 
 	return NextResponse.json(new URL('/', req.url));

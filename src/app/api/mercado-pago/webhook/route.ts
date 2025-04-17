@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
 
 		return NextResponse.json({ received: true }, { status: 200 });
 	} catch (error) {
-		console.log(' Error handling webhook: ', error);
+		console.log('Error handling webhook: ', error);
 		return NextResponse.json(
 			{ error: 'Error processing payment' },
 			{ status: 500 },
