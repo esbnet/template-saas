@@ -2,6 +2,7 @@ import 'server-only';
 
 import { db } from '@/app/lib/firebase';
 import stripe from '@/app/lib/stripe';
+import { NextResponse } from 'next/server';
 
 export async function getOrCreateCustomerId(userId: string, userEmail: string) {
 	try {
@@ -29,5 +30,11 @@ export async function getOrCreateCustomerId(userId: string, userEmail: string) {
 		await userRef.update({ stripeCustomerId: stripeCustomer.id });
 
 		return stripeCustomer.id;
-	} catch (error) {}
+	} catch (error) {
+		console.log(error);
+		return NextResponse.json(
+			{ error: 'Error creating customer' },
+			{ status: 500 },
+		);
+	}
 }

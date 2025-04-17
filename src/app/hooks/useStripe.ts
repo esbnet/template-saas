@@ -1,6 +1,17 @@
 import { type Stripe, loadStripe } from '@stripe/stripe-js';
 import { useEffect, useState } from 'react';
 
+type PaymentCheckoutData = {
+	testId: string;
+	price: string;
+};
+
+type SubscriptionCheckoutData = {
+	testeId: string;
+	price: string;
+	userId: string;
+};
+
 export function useStripe() {
 	const [stripe, setStripe] = useState<Stripe | null>(null);
 
@@ -15,8 +26,9 @@ export function useStripe() {
 		loadStripeAsync();
 	}, []);
 
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	async function createPaymentStripeCheckout(checkoutData: any) {
+	async function createPaymentStripeCheckout(
+		checkoutData: PaymentCheckoutData,
+	) {
 		if (!stripe) return console.log('Stripe not initialized');
 
 		try {
@@ -36,8 +48,9 @@ export function useStripe() {
 		}
 	}
 
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	async function createSubscriptionStripeCheckout(checkoutData: any) {
+	async function createSubscriptionStripeCheckout(
+		checkoutData: SubscriptionCheckoutData,
+	) {
 		if (!stripe) return console.log('Stripe not initialized');
 
 		try {

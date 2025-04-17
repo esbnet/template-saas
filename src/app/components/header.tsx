@@ -1,4 +1,5 @@
 import { auth } from '@/app/lib/auth';
+import Image from 'next/image';
 import { GiTakeMyMoney } from 'react-icons/gi';
 
 export default async function Header() {
@@ -16,7 +17,7 @@ export default async function Header() {
 				{session?.user?.email && session.user.email}
 				<div>
 					{session?.user?.image && (
-						<img
+						<Image
 							src={session.user.image}
 							alt="Avatar"
 							width={50}
